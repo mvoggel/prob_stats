@@ -59,9 +59,3 @@ This project is a web-based **Statistics & Probability Explorer**, designed to h
 - Enable **CSV uploads** for user-driven analysis.
 - Expand Bayesian models with **Markov Chain Monte Carlo (MCMC)**.
 
----
-
-This plan ensures a balance between **coding effort, deployment feasibility, and educational value**, allowing for an effective showcase of statistics knowledge while keeping the build time manageable. The focus on Bayesian statistics makes it a strong foundation for a **future college course**.
-
-Let me know if you'd like to adjust anything!
-
