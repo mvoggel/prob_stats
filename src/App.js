@@ -1,33 +1,29 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/sidebar.js";
-import Navbar from "./components/navbar.js";
-import Footer from "./components/footer.js";
+import Sidebar from "./components/sidebar";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
-/* Import Parent Pages */
-import Introduction from "./content/Introduction";
-import DescriptiveStatistics from "./content/DescriptiveStatistics";
-import Probability from "./content/Probability";
-import ProbabilityDistributions from "./content/ProbabilityDistributions";
-import InferentialStatistics from "./content/InferentialStatistics";
-import Regression from "./content/Regression";
+/* Import Course Pages */
+import Introduction from "./content/introduction/Introduction";
+import DescriptiveStatistics from "./content/descriptive-statistics/DescriptiveStatistics";
+import Probability from "./content/probability/Probability";
+import ProbabilityDistributions from "./content/probability-distributions/ProbabilityDistributions";
+import InferentialStatistics from "./content/inferential-statistics/InferentialStatistics";
+import Regression from "./content/regression/Regression";
 
-/* Import Child Pages */
-import WhatIsStatistics from "./content/WhatIsStatistics";
-import TypesOfData from "./content/TypesOfData";
-import MeasurementScales from "./content/MeasurementScales";
-import BasicProbability from "./content/BasicProbability";
-import SetOperations from "./content/SetOperations";
-import BayesTheorem from "./content/BayesTheorem";
-import HypothesisTesting from "./content/HypothesisTesting";
-import LinearRegression from "./content/LinearRegression";
+/* Import Subsections */
+import DataVisualization from "./content/introduction/DataVisualization";
+import CentralTendency from "./content/descriptive-statistics/CentralTendency";
+import HypothesisTesting from "./content/inferential-statistics/HypothesisTesting";
+import LinearRegression from "./content/regression/LinearRegression";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar /> {/* Navbar stays on top, outside the flex container */}
       <div style={{ display: "flex" }}>
-        <Sidebar />
+        <Sidebar /> {/* Sidebar remains in the layout */}
         <div style={{ flexGrow: 1, padding: "20px" }}>
           <Routes>
             {/* Parent Pages */}
@@ -38,13 +34,9 @@ function App() {
             <Route path="/inferential-statistics" element={<InferentialStatistics />} />
             <Route path="/regression" element={<Regression />} />
 
-            {/* Child Pages - Nested Topics */}
-            <Route path="/introduction/what-is-statistics" element={<WhatIsStatistics />} />
-            <Route path="/introduction/types-of-data" element={<TypesOfData />} />
-            <Route path="/introduction/measurement-scales" element={<MeasurementScales />} />
-            <Route path="/probability/basic-probability" element={<BasicProbability />} />
-            <Route path="/probability/set-operations" element={<SetOperations />} />
-            <Route path="/probability-distributions/bayes-theorem" element={<BayesTheorem />} />
+            {/* Child Pages */}
+            <Route path="/introduction/data-visualization" element={<DataVisualization />} />
+            <Route path="/descriptive-statistics/central-tendency" element={<CentralTendency />} />
             <Route path="/inferential-statistics/hypothesis-testing" element={<HypothesisTesting />} />
             <Route path="/regression/linear-regression" element={<LinearRegression />} />
           </Routes>

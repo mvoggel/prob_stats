@@ -71,13 +71,15 @@ const Sidebar = () => {
             </div>
             {openUnits[unit.title] && (
               <ul style={{ paddingLeft: "15px" }}>
-                {unit.subsections.map((sub, subIndex) => (
-                  <li key={subIndex} style={{ marginBottom: "3px" }}>
-                    <Link to={`/${unit.title.toLowerCase().replace(/ /g, "-")}/${sub.toLowerCase().replace(/ /g, "-")}`} style={{ textDecoration: "none", color: "black" }}>
-                      {sub}
+                {unit.subsections.map((sub, index) => (
+                  <div key={index} className="sidebar-subsection">
+                    <Link to={sub.path}>
+                      {sub.title}
                     </Link>
-                  </li>
+                  </div>
                 ))}
+
+
               </ul>
             )}
           </li>

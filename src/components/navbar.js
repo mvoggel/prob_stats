@@ -1,15 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/probability.js">Probability</Link></li>
-        <li><Link to="/statistics.js">Statistics</Link></li>
-        <li><Link to="/bayesian.js">Bayesian Statistics</Link></li>
-      </ul>
+    <nav style={{ padding: "10px", background: "#282c34", color: "white", textAlign: "center" }}>
+      <h1>Statistics & Probability Course</h1>
     </nav>
   );
 }
