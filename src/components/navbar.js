@@ -6,9 +6,9 @@ function Navbar() {
     <nav>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/probability">Probability</Link></li>
-        <li><Link to="/statistics">Statistics</Link></li>
-        <li><Link to="/bayesian">Bayesian Statistics</Link></li>
+        <li><Link to="/probability.js">Probability</Link></li>
+        <li><Link to="/statistics.js">Statistics</Link></li>
+        <li><Link to="/bayesian.js">Bayesian Statistics</Link></li>
       </ul>
     </nav>
   );
