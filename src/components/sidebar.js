@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./sidebar.css";  // ✅ Import the CSS file
+
 
 const Sidebar = () => {
   const [openUnits, setOpenUnits] = useState({});
@@ -58,28 +60,31 @@ const Sidebar = () => {
       ]
     }
   ];
-  
 
   return (
     <div style={{ width: "250px", padding: "10px", background: "#f8f9fa", height: "100vh", borderRight: "1px solid #ddd" }}>
       <h2>Course Units</h2>
+
+      {/* Home Link (separate from units) */}
+      <div style={{ marginBottom: "10px" }}>
+        <Link to="/" style={{ fontWeight: "bold", display: "block" }}>🏠 Home</Link>
+      </div>
+
       <ul style={{ listStyleType: "none", padding: 0 }}>
         {courseUnits.map((unit, index) => (
           <li key={index}>
+            {/* Only show toggle for units with subsections */}
             <div onClick={() => toggleUnit(unit.title)} style={{ cursor: "pointer", fontWeight: "bold", marginBottom: "5px" }}>
-              {unit.title} {openUnits[unit.title] ? "▼" : "▶"}
+              {unit.title} {unit.subsections ? (openUnits[unit.title] ? "▼" : "▶") : ""}
             </div>
-            {openUnits[unit.title] && (
+
+            {openUnits[unit.title] && unit.subsections && (
               <ul style={{ paddingLeft: "15px" }}>
-                {unit.subsections.map((sub, index) => (
-                  <div key={index} className="sidebar-subsection">
-                    <Link to={sub.path}>
-                      {sub.title}
-                    </Link>
+                {unit.subsections.map((sub, subIndex) => (
+                  <div key={subIndex} className="sidebar-subsection">
+                    <Link to={sub.path}>{sub.title}</Link>
                   </div>
                 ))}
-
-
               </ul>
             )}
           </li>

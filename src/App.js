@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import WhatIsStatistics from "./content/introduction/WhatIsStatistics.js";
+
 
 /* Import Course Pages */
 import Introduction from "./content/introduction/Introduction";
@@ -39,6 +41,8 @@ function App() {
             <Route path="/descriptive-statistics/central-tendency" element={<CentralTendency />} />
             <Route path="/inferential-statistics/hypothesis-testing" element={<HypothesisTesting />} />
             <Route path="/regression/linear-regression" element={<LinearRegression />} />
+            <Route path="/introduction/what-is-statistics" element={<WhatIsStatistics />} />
+
           </Routes>
         </div>
       </div>

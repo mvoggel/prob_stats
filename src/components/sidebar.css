@@ -1,0 +1,73 @@
+/* Sidebar Container */
+.sidebar {
+    width: 250px;
+    padding: 10px;
+    background: #f8f9fa;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Enables scrolling if content is too long */
+  }
+  
+  /* Sidebar Title */
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Course Unit Titles (Clickable Parent Links) */
+  .sidebar-section {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Rotating Arrow for Expanding Sections */
+  .sidebar-arrow {
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+  }
+  
+  .sidebar-arrow.open {
+    transform: rotate(90deg);
+  }
+  
+  /* Subsections Styling */
+  .sidebar-subsection {
+    padding-left: 15px;
+    margin-top: 3px;
+  }
+  
+  .sidebar-subsection a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #555;
+    font-family: "Arial", sans-serif;
+    display: block;
+    padding: 3px 0;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .sidebar-subsection a:hover {
+    color: #007bff;
+  }
+  
+  /* Home Link Styling */
+  .sidebar-home {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar-home:hover {
+    color: #007bff;
+  }
+  
