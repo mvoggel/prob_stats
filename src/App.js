@@ -4,6 +4,7 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import WhatIsStatistics from "./content/introduction/WhatIsStatistics.js";
+import TypesOfData from "./content/introduction/TypesOfData.js";
 
 
 /* Import Course Pages */
@@ -42,6 +43,7 @@ function App() {
             <Route path="/inferential-statistics/hypothesis-testing" element={<HypothesisTesting />} />
             <Route path="/regression/linear-regression" element={<LinearRegression />} />
             <Route path="/introduction/what-is-statistics" element={<WhatIsStatistics />} />
+            <Route path="/introduction/types-of-data" element={<TypesOfData />} />
 
           </Routes>
         </div>

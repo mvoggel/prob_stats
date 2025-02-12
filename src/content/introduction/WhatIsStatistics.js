@@ -1,11 +1,15 @@
 import React from "react";
 import FooterNav from "../../components/FooterNav.js";
+import ReadingTime from "../../components/ReadingTime.js";
 
 
 const WhatIsStatistics = () => {
+  const pageContent = `Statistics is the science of collecting, organizing, analyzing, and interpreting data...`;
+
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <h1>What is Statistics and Probability?</h1>
+      <ReadingTime content={pageContent} />
       <h3>Statistics </h3>
       <p>
         Statistics is the science of <strong>collecting, organizing, analyzing, and interpreting data</strong> to make informed decisions. 
@@ -101,11 +105,6 @@ const WhatIsStatistics = () => {
       <p>Below is an example of how data can be visualized:</p>
       <img src="/images/statistics-example.png" alt="Statistics Example" style={{ width: "100%" }} />
 
-      <h2>Next Steps</h2>
-      <p>
-        Now that you understand what statistics is, let's explore the different types of data.
-        Click <a href="/introduction/types-of-data">here</a> to continue.
-      </p>
     <FooterNav 
       next={{ path: "/introduction/types-of-data", label: "Next: Types of Data" }} 
     />
