@@ -3,7 +3,7 @@
     width: 250px;
     padding: 10px;
     background: #f8f9fa;
-    height: 100vh;
+    /* Sidebar Title height: 1000px;*/
     border-right: 1px solid #ddd;
     overflow-y: auto; /* Enables scrolling if content is too long */
   }
