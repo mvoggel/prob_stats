@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./sidebar.css";  // ✅ Import the CSS file
-
+import "./sidebar.css";
 
 const Sidebar = () => {
   const [openUnits, setOpenUnits] = useState({});

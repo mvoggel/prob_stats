@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-const estimateReadingTime = (text) => {
-  const wordsPerMinute = 200; // Average adult reading speed
-  const words = text.split(/\s+/).length;
-  return Math.ceil(words / wordsPerMinute);
-};
-
-const ReadingTime = ({ contentId }) => {
-  const [readingTime, setReadingTime] = useState(1);
+const ReadingTime = ({ contentRef }) => {
+  const [readingTime, setReadingTime] = useState(0);
 
   useEffect(() => {
-    const contentElement = document.getElementById(contentId);
-    if (contentElement) {
-      const text = contentElement.innerText; // Get all visible text
-      setReadingTime(estimateReadingTime(text));
+    if (contentRef.current) {
+      // Extract all text from the page
+      const textContent = contentRef.current.innerText || "";
+      const wordCount = textContent.split(/\s+/).filter(Boolean).length;
+      setReadingTime(Math.ceil(wordCount / 200)); // Assuming 200 words per minute
     }
-  }, []);
+  }, [contentRef]);
 
-  return (
-    <p style={{ fontSize: "14px", color: "gray", marginBottom: "10px" }}>
-      ⏳ Estimated Reading Time: {readingTime} min
-    </p>
-  );
+  return <p style={{ fontStyle: "italic", color: "#666" }}>⏳ Estimated Reading Time: {readingTime} min</p>;
 };
 
 export default ReadingTime;
