@@ -19,6 +19,8 @@ import DataVisualization from "./content/introduction/DataVisualization";
 import CentralTendency from "./content/descriptive-statistics/CentralTendency";
 import HypothesisTesting from "./content/inferential-statistics/HypothesisTesting";
 import LinearRegression from "./content/regression/LinearRegression";
+import MeasurementScales from "./content/introduction/MeasurementScales.js";
+import PopulationSamples from "./content/introduction/PopulationSamples.js";
 
 function App() {
   return (
@@ -49,6 +51,10 @@ function App() {
               <Route path="/regression/linear-regression" element={<LinearRegression />} />
               <Route path="/introduction/what-is-statistics" element={<WhatIsStatistics />} />
               <Route path="/introduction/types-of-data" element={<TypesOfData />} />
+              <Route path="/introduction/measurement-scales" element={<MeasurementScales />} />
+              <Route path="/introduction/populations-vs-samples" element={<PopulationSamples />} />
+
+
             </Routes>
           </div>
         </div>

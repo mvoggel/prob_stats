@@ -6,7 +6,7 @@ const WhatIsStatistics = () => {
   const contentRef = useRef(null);
 
   return (
-    <div ref={contentRef} style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+    <div ref={contentRef} style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
       <h1>What is Statistics and Probability?</h1>
       <ReadingTime contentRef={contentRef} />
 

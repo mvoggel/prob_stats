@@ -14,6 +14,7 @@ const Sidebar = () => {
 
   const courseUnits = [
     { title: "Introduction to Statistics", path: "/introduction", subsections: [
+        { title: "Introduction", path: "/introduction" },
         { title: "What is Statistics?", path: "/introduction/what-is-statistics" },
         { title: "Types of Data", path: "/introduction/types-of-data" },
         { title: "Measurement Scales", path: "/introduction/measurement-scales" },

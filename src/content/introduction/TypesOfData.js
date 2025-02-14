@@ -2,9 +2,9 @@ import React from "react";
 import FooterNav from "../../components/FooterNav.js";
 
 
-const WhatIsStatistics = () => {
+const TypesOfData = () => {
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+    <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
       <h1>Types of Data</h1>
       <h3>Statistics </h3>
       <p>
@@ -26,12 +26,11 @@ const WhatIsStatistics = () => {
         Probability plays a fundamental role in statistics, helping us make predictions about future outcomes based on past data.
       </p>
 
+      <FooterNav 
+        prev={{ path: "/introduction/what-is-statistics", label: "← Back: What is Statistics?" }} 
+        next={{ path: "/introduction/measurement-scales", label: "Next: Measurement Scales →" }} 
+      />
 
-    <FooterNav 
-      next={{ path: "/introduction/measurement-scales", label: "Next: Measurement Scales" }} 
-      prev={{ path: "/introduction/what-is-statistics", label: "Back: What is Statistics?" }} 
-
-    />
     </div>
     
   );
@@ -39,4 +38,4 @@ const WhatIsStatistics = () => {
 
 
 
-export default WhatIsStatistics;
+export default TypesOfData;
