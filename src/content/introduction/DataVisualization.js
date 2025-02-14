@@ -1,103 +1,83 @@
 import React, { useRef } from "react";
 import FooterNav from "../../components/FooterNav.js";
 import ReadingTime from "../../components/ReadingTime.js";
+import ChartComponent from "../../components/ChartComponent.js";
 
 const DataVisualization = () => {
   const contentRef = useRef(null);
 
+  // Sample data for the chart
+  const sampleLabels = ["2015", "2016", "2017", "2018", "2019", "2020"];
+  const sampleData = [50, 65, 80, 120, 150, 200];
+
   return (
     <div ref={contentRef} style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
-      <h1>Data visualization</h1>
+      <h1>Introduction to Data Visualization</h1>
       <ReadingTime contentRef={contentRef} />
 
-      <h3>Statistics </h3>
       <p>
-        Statistics is the science of <strong>collecting, organizing, analyzing, and interpreting data</strong> to make informed decisions. 
-        It plays a crucial role in research, business, healthcare, economics, and countless other fields where data is used to understand patterns, 
-        make predictions, and draw conclusions.
+        Data visualization is the **graphical representation of information and data**. By using charts, graphs, 
+        and maps, we can make complex data easier to understand and analyze.
       </p>
+
+      <h2>📌 Why is Data Visualization Important?</h2>
       <p>
-        At its core, <strong>statistics helps us make sense of uncertainty and variation</strong>. Data is rarely perfect or complete, and 
-        statistical methods allow us to extract meaningful insights despite randomness and imperfections in measurement. There are two main 
-        facets of statistics, Descriptive and Inferential Statistics, which we will cover in this course. 
+        **Raw data can be difficult to interpret**, but visualization helps by showing patterns, trends, and relationships. 
+        Effective visualizations improve decision-making and communication.
       </p>
 
-      <h4>Descriptive vs. Inferential Statistics</h4>
-      <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
-        <thead>
-          <tr style={{ backgroundColor: "#f4f4f4" }}>
-            <th style={{ width: "50%", padding: "10px", border: "1px solid #ddd" }}>Descriptive Statistics</th>
-            <th style={{ width: "50%", padding: "10px", border: "1px solid #ddd" }}>Inferential Statistics</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: "10px", border: "1px solid #ddd" }}>Summarizes and visualizes data</td>
-            <td style={{ padding: "10px", border: "1px solid #ddd" }}>Makes predictions based on sample data</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "10px", border: "1px solid #ddd" }}>Mean, Median, Mode (Central Tendency)</td>
-            <td style={{ padding: "10px", border: "1px solid #ddd" }}>Hypothesis Testing</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "10px", border: "1px solid #ddd" }}>Standard Deviation, Variance (Measures of Spread)</td>
-            <td style={{ padding: "10px", border: "1px solid #ddd" }}>Confidence Intervals</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>Probability </h3>
+      <h3>📈 **Example: Stock Market Trends**</h3>
       <p>
-        Probability is the branch of mathematics that quantifies <strong>uncertainty and randomness</strong>. 
-        It measures the likelihood of an event occurring, expressed as a number between 0 (impossible) and 1 (certain). 
-        Probability plays a fundamental role in statistics, helping us make predictions about future outcomes based on past data.
+        Instead of analyzing thousands of stock prices, investors use **line charts** to observe 
+        how a stock's value changes over time.
       </p>
 
+      <h3>💡 **Example: COVID-19 Case Trends**</h3>
       <p>
-        In real life, probability helps us answer questions like:  
-        <em>"What are the chances of rain tomorrow?"</em>  
-        <em>"How likely is it to win the lottery?"</em>  
-        <em>"What’s the probability of getting heads when flipping a coin?"</em>  
+        Governments and health officials use **bar charts and heatmaps** to track and predict 
+        infection rates across different regions.
       </p>
 
-      <p>
-        These probabilities are calculated using <strong>mathematical rules</strong> and models that help quantify uncertainty.
-      </p>
+      <hr />
 
-      <p>
-        For example, one probability formula you may encounter later in this course is **Bayes’ Theorem**, which helps us update probabilities based on new information:
-      </p>
-
-      <p style={{ fontSize: "18px", backgroundColor: "#f4f4f4", padding: "10px", borderLeft: "5px solid #0077cc" }}>
-        P(A | B) = (P(B | A) * P(A)) / P(B)
-      </p>
-
-      <p>
-        This formula helps calculate the probability of event A occurring given that event B has already happened. 
-        It's widely used in medical testing, spam detection, and even machine learning!
-      </p>
-
-      <hr style={{ border: "1px solid #ccc", margin: "20px 0" }} />
-
-      <h2>Key Takeaways and Resources:</h2>
+      <h2>📊 Common Types of Data Visualizations</h2>
       <ul>
-        <li><strong>Statistics is a branch of applied mathematics</strong> that helps us gather and analyze data.</li>
-        <li><strong>Probability measures uncertainty</strong> and ranges from 0 (impossible) to 1 (certain).</li>
-        <li><strong>Two major branches of statistics:</strong>
-          <ul>
-            <li><strong>Descriptive Statistics</strong> – Summarizing and visualizing data (e.g., averages, charts, graphs).</li>
-            <li><strong>Inferential Statistics</strong> – Making predictions or generalizations from a sample to a larger population.</li>
-          </ul>
-        </li>
-        <li><strong>Probability plays a key role in statistics</strong>, helping quantify uncertainty and variation.</li>
+        <li><strong>Bar Charts:</strong> Compare different categories.</li>
+        <li><strong>Line Graphs:</strong> Show trends over time.</li>
+        <li><strong>Pie Charts:</strong> Display proportions of a whole.</li>
+        <li><strong>Histograms:</strong> Show frequency distributions.</li>
+        <li><strong>Scatter Plots:</strong> Visualize relationships between two variables.</li>
       </ul>
 
-      <p>Below is an example of how data can be visualized:</p>
-      <img src="/images/statistics-example.png" alt="Statistics Example" style={{ width: "100%" }} />
+      <hr />
+
+      <h2>📉 Example Chart: Website Traffic Over Time</h2>
+      <ChartComponent 
+        title="Website Visitors Per Year" 
+        labels={sampleLabels} 
+        data={sampleData} 
+      />
+
+      <p>
+        The chart above shows the growth of website visitors over the past **six years**. 
+        We can observe an **upward trend**, indicating increasing popularity.
+      </p>
+
+      <h2>📌 Choosing the Right Visualization</h2>
+      <p>
+        Different types of data require different visualizations. The right chart depends on **what insights you 
+        want to convey**. Here are some guidelines:
+      </p>
+      <ul>
+        <li>Use **bar charts** for categorical comparisons.</li>
+        <li>Use **line graphs** for continuous data trends.</li>
+        <li>Use **pie charts** when showing proportions.</li>
+        <li>Use **scatter plots** for correlation analysis.</li>
+      </ul>
 
       <FooterNav 
-        prev={{ path: "/introduction", label: "← Back: Introduction" }} 
-        next={{ path: "/introduction/types-of-data", label: "Next: Types of Data →" }} 
+        prev={{ path: "/introduction/populations-vs-samples", label: "← Back: Populations vs Samples" }} 
+        next={{ path: "/descriptive-statistics", label: "Next: Descriptive Statistics →" }} 
       />
     </div>
   );
