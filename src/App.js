@@ -7,6 +7,7 @@ import WhatIsStatistics from "./content/introduction/WhatIsStatistics.js";
 import TypesOfData from "./content/introduction/TypesOfData.js";
 
 /* Import Course Pages */
+import HomeContent from "./content/home.js";
 import Introduction from "./content/introduction/Introduction";
 import DescriptiveStatistics from "./content/descriptive-statistics/DescriptiveStatistics";
 import Probability from "./content/probability/Probability";
@@ -32,10 +33,10 @@ function App() {
         <div className="main-layout">
           {/* Fixed Sidebar */}
           <Sidebar />
-
           {/* Scrollable Content */}
           <div className="content-area">
             <Routes>
+              <Route path="/" element={<HomeContent />} /> 
               {/* Parent Pages */}
               <Route path="/introduction" element={<Introduction />} />
               <Route path="/descriptive-statistics" element={<DescriptiveStatistics />} />
