@@ -8,7 +8,7 @@ const DataVisualization = () => {
 
   // Sample data for the chart
   const sampleLabels = ["2015", "2016", "2017", "2018", "2019", "2020"];
-  const sampleData = [50, 65, 80, 120, 150, 200];
+  const sampleData = [50, 65, 80, 120, 110, 155];
 
   return (
     <div ref={contentRef} style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
